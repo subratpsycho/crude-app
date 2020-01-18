@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form</title>
+		<script type="text/javascript" src="normal form.js"></script>
+		
+	</head>
+	<body>
+		<form>
+		
+		Name:<input type="text" name="txta" id="name" />
+		address:<input type="text" name="txtb" id="address"/><br/>
+		bloodgroup:<input type="text" name="txtc" id="bloodgroup"/><br/>
+		password:<input type="password" name="txte" id="password"/><br/>
+		Delete/Update ID:<input type="text" name="txtd" id="Id"/><br/>
+		
+
+		
+		<input type= "button" name="btnclick" value="submit" onclick="show();"/>
+		<input type="reset" value="Reset">
+		<input type= "button" name="btnclick" value="DELETE" onclick="deleteData();"/>
+		<input type= "button" name="btnclick" value="View Data" onclick="viewData();"/>
+		<input type= "button" name="btnclick" value="Update" onclick="update();"/>
+		<input type= "button" name="btnclick" value="ViewPassword" onclick="fetchUserData();"/>
+
+		</form>
+		<div id="sesData">
+		</div>
+	</body>
+</html>

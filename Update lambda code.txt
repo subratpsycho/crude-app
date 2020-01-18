@@ -1,0 +1,30 @@
+import json
+import boto3
+
+dynamboDbClient = boto3.client('dynamodb')
+
+def lambda_handler(event, context):
+    
+    name = event['name']
+    address = event['address']
+    bloodgroup = event['bloodgroup']
+    id = event['Id']
+    
+    dynamboDbClient.update_item(
+    TableName='subratTester',
+        Key={
+            'ID':{'S':id}
+        },
+        AttributeUpdates={
+            'Name':{'Value':{'S':name},
+            'Action':'PUT'
+            },
+            'Address':{'Value':{'S':address},
+            'Action':'PUT'
+            },
+            'Blood Group':{'Value':{'S':bloodgroup},
+            'Action':'PUT'
+            }
+        }
+    )
+    return ("updated sucessfully")

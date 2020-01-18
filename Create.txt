@@ -1,0 +1,25 @@
+import json
+import boto3
+import random
+
+dynamboDbClient = boto3.client('dynamodb')
+
+id=str(random.randint(1,999999999))
+
+def lambda_handler(event, context):
+    name=event['name']
+    address=event['address']
+    bloodGroup=event['bloodgroup']   
+    
+    #putting items to dynamo Db 
+    dynamboDbClient.put_item(
+    TableName='subratTester',
+    Item={
+        'ID': {'S':id},
+        'Name': {'S':name},
+        'Address': {'S':address},
+        'Blood Group': {'S':bloodGroup}
+        
+    }
+    )
+    return("addeded sucessfully")

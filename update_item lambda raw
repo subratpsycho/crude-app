@@ -1,0 +1,9 @@
+response = client.update_item(
+    TableName='subratTester',
+    Key={
+        'ID': {
+            'S': name,
+            'S': address,
+            'S': bloodGroup,
+    }
+)
